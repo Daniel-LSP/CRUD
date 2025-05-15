@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, redirect
 app=Flask(__name__)
 
-usuarios=[]
+usuario=[]
 id_contador=1
 
 @app.route ("/", methods=['GET', 'POST'])
@@ -10,8 +10,9 @@ def crud():
     if request.method=="POST":
         nombre=request.form ["nombre"] 
         correo=request.form ["correo"]
-
-    return render_template ("crud.html")
+        usuario.append({"id": id_contador, "nombre": nombre, "correo": correo})
+        id_contador+=1
+    return render_template ("crud.html", usuario=usuario)
 
 
 

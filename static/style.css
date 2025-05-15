@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+    min-height: 100vh;
 }
 
 .contenedor{
@@ -16,17 +17,43 @@ body {
     width: 90%;
 }
 
+
 h1 {
     color: aqua;
 }
 
-input {
-    color:rgb(165, 155, 42);
+form input {
+    width: 300px;
+    color:rgb(48, 3, 247);
     border-radius: 20px;
-    background-color: darkgreen;
+    background-color: rgb(223, 252, 2);
 }
 
-button {
+button{
+    margin: 10px;
+    width: 200px;
     color: blue;
+    background-color: aquamarine;
     border-radius: 20px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse:collapse;
+    margin: 10px;
+    
+}
+
+table, th, td {
+    border:5px solid rgb(240, 213, 10);
+    text-align:center;
+}
+
+th {
+    color:rgb(37, 37, 56);
+}
+
+td {
+    color:darkred;
 }

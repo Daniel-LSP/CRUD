@@ -15,7 +15,18 @@
         <button><h2>Registrar</h2></button>
         </form>
         <table>
+            <tr><th>ID</th><th>NOMBRE USUARIO</th><th>CORREO USUARIO</th><th>ACCIONES</th></tr>
+            {% for persona in usuario %}
+            <tr>
+                <td>{{ persona.id }}</td>
+                <td>{{ persona.nombre }}</td>
+                <td>{{ persona.correo }}</td>
+                <td><a href="/?eliminar={{ persona.id }}">Eliminar</a></td>
+            </tr>
 
+
+
+            {% endfor %}
         </table>
     </div>
 </body>
