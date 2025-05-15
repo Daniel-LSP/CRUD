@@ -12,6 +12,14 @@ def crud():
         correo=request.form ["correo"]
         usuario.append({"id": id_contador, "nombre": nombre, "correo": correo})
         id_contador+=1
+        #print(usuario)
+    eliminar_id=request.args.get("eliminar")
+    if eliminar_id:
+        for diccionario in usuario:
+            if str(diccionario["id"])==eliminar_id:
+                usuario.remove(diccionario)
+                break 
+
     return render_template ("crud.html", usuario=usuario)
 
 
