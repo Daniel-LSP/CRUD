@@ -27,6 +27,7 @@ form input {
     color:rgb(48, 3, 247);
     border-radius: 20px;
     background-color: rgb(223, 252, 2);
+    border:none;
 }
 
 button{
@@ -35,6 +36,7 @@ button{
     color: blue;
     background-color: aquamarine;
     border-radius: 20px;
+    border:none;
 }
 
 
