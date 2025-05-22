@@ -13,7 +13,7 @@ def crud():
         usuario.append({"id": id_contador, "nombre": nombre, "correo": correo})
         id_contador+=1
         print(usuario)
-    eliminar_id=request.args.get("eliminar")
+    eliminar_id=request.args.get("eliminar")#/?eliminar/2
     if eliminar_id:
         for diccionario in usuario:
             if str(diccionario["id"])==eliminar_id:
@@ -25,7 +25,7 @@ def crud():
 #Ruta para editar la informacion de un usuario
 @app.route("/update/<int:id>", methods=['GET', 'POST'])
 def update(id):
-    usuario_a_editar=""
+    usuario_a_editar=''
     #TODO: capturar y buscar el usuario a editar
     for diccionario in usuario: #Para cada diccionario dentro de la lista evalue:
         if diccionario['id']==id: #Si el id convertido a string es igual al id que me pasan por parametro 
@@ -38,7 +38,9 @@ def update(id):
         usuario_a_editar["correo"]=request.form.get("correo")#el correo nuevo sera el que llegue por un nuevo formulario
 
         return redirect(url_for("crud"))#Redireccione la aplicacion a la ruta de la funciom crud
-
+    if usuario_a_editar=='':
+        return f"El usuario con id {id} no se encuentra" 
+    
     return render_template("editar.html", usuario_a_editar=usuario_a_editar)
 
 
